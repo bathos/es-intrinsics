@@ -1,0 +1,15 @@
+{
+  "name": "es-intrinsics",
+  "version": "1.0.0",
+  "description": "registry of explicitly named intrinsic objects in EcmaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecmascript",
+    "intrinsics"
+  ],
+  "author": "Darien Maillet Valentine",
+  "license": "ISC"
+}

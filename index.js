@@ -1,0 +1,121 @@
+'use strict';
+
+const iteratorPrototypeOf = Cstr =>
+  Object.getPrototypeOf(new Cstr()[Symbol.iterator]());
+
+const {
+  Atomics,
+  SharedArrayBuffer,
+  SharedArrayBuffer: { prototype: SharedArrayBufferPrototype }={}
+} = (0, eval)('this');
+
+const ArrayIteratorPrototype = iteratorPrototypeOf(Array);
+const AsyncFunction          = (async => {}).constructor;
+const AsyncFunctionPrototype = AsyncFunction.prototype;
+const GeneratorFunction      = function * () {}.constructor;
+const IteratorPrototype      = Object.getPrototypeOf(iteratorPrototypeOf(Set));
+
+const ThrowTypeError = function () {
+  return Object.getOwnPropertyDescriptor(arguments, 'callee').get;
+}();
+
+const TypedArray = Object.getPrototypeOf(Uint8Array.prototype).constructor;
+
+module.exports = new Map([
+  [ '%Array%',                      Array.prototype ],
+  [ '%ArrayBuffer%',                ArrayBuffer ],
+  [ '%ArrayBufferPrototype%',       ArrayBuffer.prototype ],
+  [ '%ArrayIteratorPrototype%',     ArrayIteratorPrototype ],
+  [ '%ArrayPrototype%',             Array.prototype ],
+  [ '%ArrayProto_values%',          Array.prototype.values ],
+  [ '%AsyncFunction%',              AsyncFunction ],
+  [ '%AsyncFunctionPrototype%',     AsyncFunctionPrototype ],
+  [ '%Atomics%',                    Atomics ],
+  [ '%Boolean%',                    Boolean ],
+  [ '%BooleanPrototype%',           Boolean.prototype ],
+  [ '%DataView%',                   DataView ],
+  [ '%DataViewPrototype%',          DataView.prototype ],
+  [ '%Date%',                       Date ],
+  [ '%DatePrototype%',              Date.prototype ],
+  [ '%decodeURI%',                  decodeURI ],
+  [ '%decodeURIComponent%',         decodeURIComponent ],
+  [ '%encodeURI%',                  encodeURI ],
+  [ '%encodeURIComponent%',         encodeURIComponent ],
+  [ '%Error%',                      Error ],
+  [ '%ErrorPrototype%',             Error.prototype ],
+  [ '%eval%',                       eval ],
+  [ '%EvalError%',                  EvalError ],
+  [ '%EvalErrorPrototype%',         EvalError.prototype ],
+  [ '%Float32Array%',               Float32Array ],
+  [ '%Float32ArrayPrototype%',      Float32Array.prototype ],
+  [ '%Float64Array%',               Float64Array ],
+  [ '%Float64ArrayPrototype%',      Float64Array.prototype ],
+  [ '%Function%',                   Function ],
+  [ '%FunctionPrototype%',          Function.prototype ],
+  [ '%Generator%',                  GeneratorFunction.prototype ],
+  [ '%GeneratorFunction%',          GeneratorFunction ],
+  [ '%GeneratorPrototype%',         GeneratorFunction.prototype.prototype ],
+  [ '%Int8Array%',                  Int8Array ],
+  [ '%Int8ArrayPrototype%',         Int8Array.prototype ],
+  [ '%Int16Array%',                 Int16Array ],
+  [ '%Int16ArrayPrototype%',        Int16Array.prototype ],
+  [ '%Int32Array%',                 Int32Array ],
+  [ '%Int32ArrayPrototype%',        Int32Array.prototype ],
+  [ '%isFinite%',                   isFinite ],
+  [ '%isNaN%',                      isNaN ],
+  [ '%IteratorPrototype%',          IteratorPrototype ],
+  [ '%JSON%',                       JSON ],
+  [ '%Map%',                        Map ],
+  [ '%MapIteratorPrototype%',       iteratorPrototypeOf(Map) ],
+  [ '%MapPrototype%',               Map.prototype ],
+  [ '%Math%',                       Math ],
+  [ '%Number%',                     Number ],
+  [ '%NumberPrototype%',            Number.prototype ],
+  [ '%Object%',                     Object ],
+  [ '%ObjectPrototype%',            Object.prototype ],
+  [ '%ObjProto_toString%',          Object.prototype.toString ],
+  [ '%ObjProto_valueOf%',           Object.prototype.valueOf ],
+  [ '%parseFloat%',                 parseFloat ],
+  [ '%parseInt%',                   parseInt ],
+  [ '%Promise%',                    Promise ],
+  [ '%PromisePrototype%',           Promise.prototype ],
+  [ '%Proxy%',                      Proxy ],
+  [ '%RangeError%',                 RangeError ],
+  [ '%RangeErrorPrototype%',        RangeError.prototype ],
+  [ '%ReferenceError%',             ReferenceError ],
+  [ '%ReferenceErrorPrototype%',    ReferenceError.prototype ],
+  [ '%Reflect%',                    Reflect ],
+  [ '%RegExp%',                     RegExp ],
+  [ '%RegExpPrototype%',            RegExp.prototype ],
+  [ '%Set%',                        Set ],
+  [ '%SetIteratorPrototype%',       iteratorPrototypeOf(Set) ],
+  [ '%SetPrototype%',               Set.prototype ],
+  [ '%SharedArrayBuffer%',          SharedArrayBuffer ],
+  [ '%SharedArrayBufferPrototype%', SharedArrayBufferPrototype ],
+  [ '%String%',                     String ],
+  [ '%StringIteratorPrototype%',    iteratorPrototypeOf(String) ],
+  [ '%StringPrototype%',            String.prototype ],
+  [ '%Symbol%',                     Symbol ],
+  [ '%SymbolPrototype%',            Symbol.prototype ],
+  [ '%SyntaxError%',                SyntaxError ],
+  [ '%SyntaxErrorPrototype%',       SyntaxError.prototype ],
+  [ '%ThrowTypeError%',             ThrowTypeError ],
+  [ '%TypedArray%',                 TypedArray ],
+  [ '%TypedArrayPrototype%',        TypedArray.prototype ],
+  [ '%TypeError%',                  TypeError ],
+  [ '%TypeErrorPrototype%',         TypeError.prototype ],
+  [ '%Uint8Array%',                 Uint8Array ],
+  [ '%Uint8ArrayPrototype%',        Uint8Array.prototype ],
+  [ '%Uint8ClampedArray%',          Uint8ClampedArray ],
+  [ '%Uint8ClampedArrayPrototype%', Uint8ClampedArray.prototype ],
+  [ '%Uint16Array%',                Uint16Array ],
+  [ '%Uint16ArrayPrototype%',       Uint16Array.prototype ],
+  [ '%Uint32Array%',                Uint32Array ],
+  [ '%Uint32ArrayPrototype%',       Uint32Array.prototype ],
+  [ '%URIError%',                   URIError ],
+  [ '%URIErrorPrototype%',          URIError.prototype ],
+  [ '%WeakMap%',                    WeakMap ],
+  [ '%WeakMapPrototype%',           WeakMap.prototype ],
+  [ '%WeakSet%',                    WeakSet ],
+  [ '%WeakSetPrototype%',           WeakSet.prototype ],
+]);
