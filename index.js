@@ -10,8 +10,7 @@ const {
 } = (0, eval)('this');
 
 const ArrayIteratorPrototype = iteratorPrototypeOf(Array);
-const AsyncFunction          = (async => {}).constructor;
-const AsyncFunctionPrototype = AsyncFunction.prototype;
+const AsyncFunction          = (async () => {}).constructor;
 const GeneratorFunction      = function * () {}.constructor;
 const IteratorPrototype      = Object.getPrototypeOf(iteratorPrototypeOf(Set));
 
@@ -29,7 +28,7 @@ module.exports = new Map([
   [ '%ArrayPrototype%',             Array.prototype ],
   [ '%ArrayProto_values%',          Array.prototype.values ],
   [ '%AsyncFunction%',              AsyncFunction ],
-  [ '%AsyncFunctionPrototype%',     AsyncFunctionPrototype ],
+  [ '%AsyncFunctionPrototype%',     AsyncFunction.prototype ],
   [ '%Atomics%',                    Atomics ],
   [ '%Boolean%',                    Boolean ],
   [ '%BooleanPrototype%',           Boolean.prototype ],
