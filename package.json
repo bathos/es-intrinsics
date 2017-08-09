@@ -11,5 +11,9 @@
     "intrinsics"
   ],
   "author": "Darien Maillet Valentine",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bathos/es-intrinsics.git"
+  },
 }
